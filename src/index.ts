@@ -42,3 +42,11 @@ export function clamp(n: number, min: number, max: number): number {
 export function capitalize(s: string): string {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
+
+/** n が偶数かを返す(整数でなければ TypeError)。 */
+export function isEven(n: number): boolean {
+  if (!Number.isInteger(n)) {
+    throw new TypeError(`isEven: 整数ではありません: ${n}`);
+  }
+  return n % 2 === 0;
+}
