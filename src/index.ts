@@ -20,3 +20,8 @@ export function clamp(n: number, min: number, max: number): number {
   }
   return Math.min(Math.max(n, min), max);
 }
+
+/** 先頭 1 文字を大文字にし、残りはそのまま返す(空文字は空文字)。 */
+export function capitalize(s: string): string {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
