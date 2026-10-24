@@ -29,3 +29,11 @@ export function parseDuration(s: string): number {
     (sec === undefined ? 0 : Number(sec) * 1_000)
   );
 }
+
+/** n を [min, max] の範囲に収めて返す(min > max なら RangeError)。 */
+export function clamp(n: number, min: number, max: number): number {
+  if (min > max) {
+    throw new RangeError(`min (${min}) must not be greater than max (${max})`);
+  }
+  return Math.min(Math.max(n, min), max);
+}
